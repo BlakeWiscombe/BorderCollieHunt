@@ -16,7 +16,9 @@ func _ready():
 		print(currentTimer)
 	print ("Game Over")
 
-
+	GlobalVariables.previousScores.push_front( GlobalVariables.scoringInformation["currentScore"])
+	print(GlobalVariables.previousScores)
+	get_tree().change_scene("res://endscene.tscn")
 
 func _process(delta):
 	$HUD/CurrentScore.text = str(GlobalVariables.scoringInformation["currentScore"])

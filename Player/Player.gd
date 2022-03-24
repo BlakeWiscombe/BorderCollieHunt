@@ -20,9 +20,9 @@ func _physics_process(delta):
 		move_and_collide(Vector2(0, movement_speed * delta))
 			
 func _process(delta):
-	if Input.is_action_just_pressed("fire"):
+	if Input.is_action_pressed("fire"):
 		var bulletInstance = bulletSource.instance()
-		bulletInstance.position = Vector2(position.x, position.y-20)
+		bulletInstance.position = Vector2(position.x-40, position.y)
 		get_tree().get_root().add_child(bulletInstance)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
